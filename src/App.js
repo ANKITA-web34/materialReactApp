@@ -1,8 +1,9 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import MainTable from "./Components/mainTable";
-import Button  from "./Components/FunctionalFiles/Button";
+import View  from "./Components/FunctionalFiles/View";
 import Edit from "./Components/FunctionalFiles/Edit";
+import AddUser from "./Components/FunctionalFiles/AddUser";
 
 // import {
 //   Button,
@@ -82,7 +83,8 @@ function App() {
     <div className="App">
       <Routes>
         <Route exact path="/" element={<MainTable className="table"/>}/>
-        <Route exact path="/view/:id" element={<Button/>}/>
+        <Route exact path="/add" element={<AddUser/>}/>
+        <Route exact path="/view/:id" element={<View/>}/>
         <Route exact path="/edit/:id" element={<Edit/>}/>
       </Routes>
     </div>

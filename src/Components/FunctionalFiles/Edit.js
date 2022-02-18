@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import { useNavigate, useParams } from "react-router";
 import Input from "@mui/material/Input";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
+import { FormGroup } from "@mui/material";
+import { Link } from "react-router-dom";
+import CustomButton from "./ButtonComp";
 
 const EditUser = () => {
   let history = useNavigate();
 
   const [users, setUsers] = useState({
     name: "",
-    username: "",
     phone: "",
+    website: "",
     email: "",
   });
 
@@ -28,33 +30,57 @@ const EditUser = () => {
   }, []);
 
   const ontextChange = (evt) => {
-    setUsers({ ...users, [evt.target.name]: evt.target.value });
+    setUsers({ ...users, [evt.target.name] : evt.target.value });
   };
 
-  const { name, username, phone, email } = users;
+  const onsubmit = async (evt) => {
+    evt.preventDefault();
+    await axios.put(`http://localhost:3004/users/${id}`, users);
+    history("/");
+}
+
+  const { name, phone, email, website } = users;
   return (
     <div>
-      <FormControl>
-        <InputLabel>Name</InputLabel>
-        <br />
-        <Input
-          type="text"
-          name="name"
-          value={name}
-          onChange={(evt) => ontextChange(evt)}
-        />
-        <br />
-      </FormControl>
-      <FormControl>
-        <InputLabel>Email</InputLabel>
-        <br />
-        <Input
-          type="email"
-          name="email"
-          value={email}
-          onChange={(evt) => ontextChange(evt)}
-        />
-      </FormControl>
+        <FormGroup> 
+            <FormControl>
+                <InputLabel>Name</InputLabel>
+                <Input
+                type="text"
+                name="name"
+                value={name}
+                onChange={(evt) => ontextChange(evt)}
+                />
+            </FormControl><br/><br/>
+            <FormControl>
+                <InputLabel>Number</InputLabel>
+                <Input
+                type="text"
+                name="phone"
+                value={phone}
+                onChange={(evt) => ontextChange(evt)}
+                />
+            </FormControl><br/><br/>
+            <FormControl>
+                <InputLabel>Website</InputLabel>
+                <Input
+                type="text"
+                name="website"
+                value={website}
+                onChange={(evt) => ontextChange(evt)}
+                />
+            </FormControl><br/><br/>
+            <FormControl>
+                <InputLabel>Email</InputLabel>
+                <Input align="right"
+                type="email"
+                name="email"
+                value={email}
+                onChange={(evt) => ontextChange(evt)}
+                />
+            </FormControl><br/><br/>
+        </FormGroup>
+            <CustomButton title="Update" variant="outlined" color="secondary" onClick={evt => onsubmit(evt)}/>
     </div>
   );
 };
