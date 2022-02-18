@@ -1,0 +1,39 @@
+{
+    "users" : [
+        {
+            "id": 1,
+            "name": "Ankita Chanal",
+            "email": "ankita@gmail.com",
+            "phone": "8290-6677-00",
+            "website": "AC34.com"
+        },
+        {
+            "id": 2,
+            "name": "Harshit Singh Chouhan",
+            "email": "harshit@gmail.com",
+            "phone": "7290-8677-87",
+            "website": "HC43.com"
+        },
+        {
+            "id": 3,
+            "name": "Nikita",
+            "email": "Nikita@gmail.com",
+            "phone": "9533-8677-87",
+            "website": "Ng15.com"
+        },
+        {
+            "id": 4,
+            "name": "Gourav Sharma",
+            "email": "goru@gmail.com",
+            "phone": "8830-8027-11",
+            "website": "GG00.com"
+        },
+        {
+            "id": 5,
+            "name": "Sushant Singh",
+            "email": "sonu@gmail.com",
+            "phone": "7864-2020-22",
+            "website": "ss00.com"
+        }
+    ]
+}
