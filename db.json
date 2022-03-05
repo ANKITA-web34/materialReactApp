@@ -1,20 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Ankita Chanal",
-      "email": "ankita@gmail.com",
-      "phone": "8290-6677-00",
-      "website": "AC34.com"
-    },
-    {
-      "id": 2,
-      "name": "Harshit Singh Chouhan",
-      "email": "harshit@gmail.com",
-      "phone": "7290-8677-87",
-      "website": "HSign43.com"
-    },
-    {
       "id": 3,
       "name": "Nikita",
       "email": "Nikita@gmail.com",
@@ -29,18 +15,73 @@
       "website": "sonuSingh.com"
     },
     {
-      "name": "newTest",
-      "website": "newTest.com",
-      "phone": "569967",
-      "email": "test@gmail.com",
-      "id": 7
-    },
-    {
       "name": "Daksh",
       "website": "daksh.com",
       "phone": "77777",
       "email": "daksh123@gmail.com",
       "id": 8
+    },
+    {
+      "id": "2",
+      "name": "Harshit singh chouhan",
+      "phone": "878376902",
+      "wesite": "thatwebdev",
+      "email": "test@gmail.com"
+    },
+    {
+      "name": "ANKITA",
+      "website": "",
+      "phone": "7357373459",
+      "email": "ANKITACHANAL34@GMAIL.COM",
+      "id": 11
+    }
+  ],
+  "comment": [
+    {
+      "id": "1",
+      "name": "harry styles",
+      "text": "testCom"
+    },
+    {
+      "name": "new harry styles",
+      "website": "harry.com",
+      "phone": "3333",
+      "email": "harry3@gmail.com",
+      "id": "5yBQ6KR",
+      "": "hh"
+    },
+    {
+      "id": "Zsug1lz",
+      "name": "Ankita ",
+      "website": "chanal",
+      "phone": "1234",
+      "email": "anki",
+      "text": "some text"
+    }
+  ],
+  "product": [
+    {
+      "id": "1",
+      "text": "50",
+      "name": "milk"
+    },
+    {
+      "id": "2",
+      "text": "90",
+      "name": "apple"
+    },
+    {
+      "id": "3",
+      "text": "100",
+      "name": "Puff corn",
+      "Puff corn": "200"
+    },
+    {
+      "id": "XMar7iH",
+      "name": "ANKITA",
+      "website": "harray.com",
+      "phone": "7357373459",
+      "email": "ANKITACHANAL34@GMAIL.COM"
     }
   ]
 }

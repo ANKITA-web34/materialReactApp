@@ -4,88 +4,26 @@ import MainTable from "./Components/mainTable";
 import View  from "./Components/FunctionalFiles/View";
 import Edit from "./Components/FunctionalFiles/Edit";
 import AddUser from "./Components/FunctionalFiles/AddUser";
+import CustomButton from "./Components/FunctionalFiles/ButtonComp";
 
-// import {
-//   Button,
-//   ButtonGroup,
-//   Checkbox,
-//   FormControlLabel,
-//   TextField,
-// } from "@mui/material";
-// import SaveAltIcon from "@mui/icons-material/SaveAlt";
-// import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-// import React from "react";
-// import CheckBoxIcon from "@mui/icons-material/CheckBox";
-// import { makeStyles } from '@mui/styles';
-
-// const useStyles = makeStyles({
-//   root: {
-//     background: 'linear-gradient(45deg, pink, blue)',
-//     color: 'white',
-//     padding: '5px 15px',
-//     border: 0,
-//     marginBottom: '20px',
-//     borderRadius: '15px'
-//   }
-// });
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <ButtonStyles/>
-//       <TextField
-//         type={"email"}
-//         variant="filled"
-//         placeholder="hy harray"
-//         color="secondary"
-//       />
-//       <CheckboxExample />
-//       <ButtonGroup variant="contained">
-//         <Button endIcon={<SaveAltIcon />}>Save</Button>
-//         <Button endIcon={<DeleteForeverIcon />} color="secondary">
-//           Delete
-//         </Button>
-//       </ButtonGroup>
-//     </div>
-//   );
-// }
-
-// function ButtonStyles() {
-//   const classes = useStyles();
-//   return <div className={classes.root}>Styled Button</div>
-  
-// }
-
-// function CheckboxExample() {
-//   const [checked, setChecked] = React.useState(true);
-
-//   return (
-//     <FormControlLabel
-//       control={
-//         <Checkbox
-//           checked={checked}
-//           icon={<CheckBoxIcon />}
-//           checkedIcon={<CheckBoxIcon />}
-//           onChange={(e) => setChecked(e.target.checked)}
-//         />
-//       }
-//       label="Chackbox"
-//     />
-//   );
-// }
-
-// export default A
-
-
-function App() {
+function App() { 
   return (
   <Router>
     <div className="App">
       <Routes>
-        <Route exact path="/" element={<MainTable className="table"/>}/>
-        <Route exact path="/add" element={<AddUser/>}/>
-        <Route exact path="/view/:id" element={<View/>}/>
-        <Route exact path="/edit/:id" element={<Edit/>}/>
+        <Route exact path="/" element={<CustomButton title="User" variant="outlined" color="secondary" onClick={evt => onclick(evt)} />} />
+        <Route exact path="/users" element={<MainTable className="table"  api="users" title="users" tableHeader={["id", "name", "number", "email"]} />}/>
+        <Route exact path="/comment" element={<MainTable className="table"  api="comment" title="Comment" tableHeader={["id", "name", "text"]} />}/>
+        <Route exact path="/product" element={<MainTable className="table"  api="product" title="product" tableHeader={["id", "name", "text"]} />}/>
+        <Route exact path="/users/add" element={<AddUser api="users" title="users"  tableHeader={["id", "name", "number", "email"]}/>}/>
+        <Route exact path="/comment/add" element={<AddUser api="comment" title="comment" tableHeader={["id", "name", "text"]} />}/>
+        <Route exact path="/product/add" element={<AddUser api="product" title="product"  tableHeader={["id", "name", "number", "email"]}/>}/>
+        <Route exact path="/users/view/:id" element={<View api="users" title="users"  tableHeader={["id", "name", "number", "email"]}/>}/>
+        <Route exact path="/comment/view/:id" element={<View api="comment" title="comment" tableHeader={["id", "name", "text"]} />}/>
+        <Route exact path="/product/view/:id" element={<View api="product" title="product"  tableHeader={["id", "name", "number", "email"]}/>}/>
+        <Route exact path="/comment/edit/:id" element={<Edit api="comment" title="comment" tableHeader={["id", "name", "text"]} />}/>
+        <Route exact path="/users/edit/:id" element={<Edit api="users" title="users"  tableHeader={["id", "name", "number", "email"]}/>}/>
+        <Route exact path="/product/edit/:id" element={<Edit api="product" title="product"  tableHeader={["id", "text", "name"]}/>}/>
       </Routes>
     </div>
   </Router>
@@ -93,3 +31,6 @@ function App() {
 };
 
 export default App;
+
+
+ {/* <Route exact path="/comments" element={<MainTable className="table"  {...comment} />}/> */}
